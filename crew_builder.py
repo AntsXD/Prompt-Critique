@@ -1,10 +1,10 @@
 from crewai import Agent, Task, Crew, LLM
 from crewai_tools import SerperDevTool
-from dotenv import load_dotenv
+
 import os
 search_tool = SerperDevTool()
 
-load_dotenv()
+
 
 def create_crew(prompt):
     llm = LLM(

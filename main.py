@@ -1,4 +1,4 @@
-from Flask import Flask, request, jsonify, render_template_string
+from flask import Flask, request, jsonify, render_template_string
 import warnings
 warnings.filterwarnings("ignore")
 from crew_builder import create_crew
