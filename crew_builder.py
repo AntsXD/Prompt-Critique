@@ -35,7 +35,7 @@ def create_crew(prompt):
                     When revising, carefully consider the critic's feedback and implement suggestions that improve accuracy, clarity, and                             usefulness."""),
         llm = llm,
         allow_delegation= False,
-        verbose = True,
+        verbose = False,
         tools=[search_tool]
     )
 
@@ -60,7 +60,7 @@ def create_crew(prompt):
 
                     Use web search to fact-check claims and verify current information."""),
         llm = llm,
-        verbose= True,
+        verbose= False,
         allow_delegation= True,
         tools=[search_tool]
     )
@@ -81,7 +81,7 @@ def create_crew(prompt):
                     Your output should be the definitive response ready for the user - clear, comprehensive, and highly useful.
                     Use web search if you need to verify any final details or add current information."""),
         llm = llm,
-        verbose = True,
+        verbose = False,
         allow_delegation=False,
         tools=[search_tool]
     )
@@ -144,7 +144,7 @@ def create_crew(prompt):
     crew= Crew(
         agents=[response_generator, critic,improver],
         tasks=[generate_task,critique_task,fix_task,improve_task],
-        verbose=True
+        verbose=False
     )
 
     return crew
